@@ -16,7 +16,7 @@ module Padrino
 
       # @private
       def form_tag(url, options = {}, &block)
-        super(url, options) { token_field_tag + capture_html(&block) }
+        super(url, options) { token_field_tag + capture_html(&block).html_safe }
       end
     end # FormHelpers
   end # CSRF
